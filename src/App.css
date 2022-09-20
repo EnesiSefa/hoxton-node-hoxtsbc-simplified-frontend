@@ -1,0 +1,14 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+
+  display: grid;
+  height: 100vh;
+  place-content: center;
+  gap: 2rem;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+}
