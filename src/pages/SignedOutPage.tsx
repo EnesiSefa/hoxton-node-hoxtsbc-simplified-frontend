@@ -19,7 +19,9 @@ export default function SignedOutPage({ signIn }: Props) {
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
+              // @ts-ignore
               name: e.target.name.value,
+              // @ts-ignore
               pin: e.target.pin.value,
             }),
           })
@@ -48,7 +50,9 @@ export default function SignedOutPage({ signIn }: Props) {
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
+              // @ts-ignore
               name: e.target.name.value,
+              // @ts-ignore
               pin: e.target.pin.value,
             }),
           })
