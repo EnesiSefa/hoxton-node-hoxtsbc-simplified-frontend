@@ -12,7 +12,7 @@ export type User = {
 
 function App() {
   const [currentUser, setCurrentUser] = useState<null | User>(null);
- 
+
   function signIn(user: User) {
     setCurrentUser(user);
   }
@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="App">
       {currentUser ? (
-        <SignedInPage currentUser={currentUser} />
+        <SignedInPage signOut={signOut} currentUser={currentUser} />
       ) : (
         <SignedOutPage signIn={signIn} />
       )}
