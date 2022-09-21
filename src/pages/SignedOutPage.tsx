@@ -1,10 +1,10 @@
 import { User } from "../App";
 
 type Props = {
-  signIn: (user:User)=>void ;
+  signIn: (user: User) => void;
 };
 
-export default function SignedOutPage({ signIn}: Props) {
+export default function SignedOutPage({ signIn }: Props) {
   return (
     <div>
       <h1>Welcome</h1>
@@ -39,7 +39,23 @@ export default function SignedOutPage({ signIn}: Props) {
         <button>SIGN UP</button>
       </form>
 
-      <form>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          fetch("http://localhost:4000/sign-in", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              name: e.target.name.value,
+              pin: e.target.pin.value,
+            }),
+          })
+            .then((resp) => resp.json())
+            .then((user) => signIn(user));
+        }}
+      >
         <h2>Sign in</h2>
         <label>
           Name:

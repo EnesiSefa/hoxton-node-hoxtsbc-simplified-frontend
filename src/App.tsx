@@ -15,6 +15,7 @@ function App() {
 
   function signIn(user: User) {
     setCurrentUser(user);
+    
   }
 
   function signOut() {
