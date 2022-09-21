@@ -14,7 +14,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState<null | User>(null);
  
   function signIn(user: User) {
-    setCurrentUser(currentUser);
+    setCurrentUser(user);
   }
 
   function signOut() {
