@@ -26,7 +26,15 @@ export default function SignedOutPage({ signIn }: Props) {
             }),
           })
             .then((resp) => resp.json())
-            .then((user) => signIn(user));
+            .then((data) => {
+              // data = {user,token}
+              if (data.error) {
+                alert(data.error);
+              } else {
+                signIn(data);
+                
+              }
+            });
         }}
       >
         <h2>Sign up</h2>
@@ -57,7 +65,14 @@ export default function SignedOutPage({ signIn }: Props) {
             }),
           })
             .then((resp) => resp.json())
-            .then((user) => signIn(user));
+            .then((data) => {
+              // data = {user,token}
+              if (data.error) {
+                alert(data.error);
+              } else {
+                signIn(data);
+              }
+            });
         }}
       >
         <h2>Sign in</h2>
